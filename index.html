@@ -153,10 +153,10 @@
       var stops = 0;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
-          if (stops == 0) setTimeout(stopVideo("#zero"), 104000);  // 1:44
-          //else if (stops == 1) setTimeout(stopVideo("#one"), 4000);  // 1:48
-          //else if (stops == 2) setTimeout(stopVideo("#two"), 9000);  // 1:57
-          //else if (stops == 3) setTimeout(stopVideo("#three"), 4000); // 2:01
+          if (stops == 0) setTimeout(function(){ return stopVideo("#zero"); }, 104000);  // 1:44
+          else if (stops == 1) setTimeout(function(){ return stopVideo("#one"); }, 4000);  // 1:48
+          else if (stops == 2) setTimeout(function(){ return stopVideo("#two"); }, 9000);  // 1:57
+          else if (stops == 3) setTimeout(function(){ return stopVideo("#three"); }, 4000); // 2:01
           stops++;
         }
       }
