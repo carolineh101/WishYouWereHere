@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -34,7 +33,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="checkAnswer("#zero")">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="checkAnswer(\"#zero\")">Submit</button>
           </div>
         </div>
       </div>
@@ -62,7 +61,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="checkAnswer("#one")">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="checkAnswer(\"#one\")">Submit</button>
           </div>
         </div>
       </div>
@@ -90,7 +89,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="checkAnswer("#two")">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="checkAnswer(\"#two\")">Submit</button>
           </div>
         </div>
       </div>
@@ -118,7 +117,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="checkAnswer("#three")">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="checkAnswer(\"#three\")">Submit</button>
           </div>
         </div>
       </div>
@@ -167,15 +166,15 @@
       }
       function stopVideo(stopID) {
         player.pauseVideo();
-	      $(stopID).modal();
+	$(stopID).modal();
       }
       function checkAnswer(stopID) {
         var answer = $(stopID + " input:radio:checked").val();
         if (answer == "yes") {
-	        alert("That's correct!");
-	        $(stopID).modal("hide");
-	        player.playVideo();
-	      } else {
+	  alert("That's correct!");
+	  $(stopID).modal("hide");
+	  player.playVideo();
+	} else {
           alert("Try again!");
         }
       }
