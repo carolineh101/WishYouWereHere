@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wish You Were Here</title>
+    <meta name="description" content="Do you think you can tell?">
+    <meta name="author" content="Caroline Ho">
+	  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  
+  <body>
+	  
+    <!-- Modal -->
+    <div class="modal fade" id="zero" tabindex="-1" role="dialog" aria-labelledby="What is heaven?" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">What is heaven?</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="yes">
+                A place regarded in various religions as the abode of God (or the gods) and the angels, and of the good after death, often traditionally depicted as being above the sky.
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="no">
+                A place regarded in various religions as a spiritual realm of evil and suffering, often traditionally depicted as a place of perpetual fire beneath the earth where the wicked are punished after death.
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer("#zero")">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="one" tabindex="-1" role="dialog" aria-labelledby="What is a blue sky?" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">What is pain?</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="no">
+                Highly unpleasant physical sensation caused by illness or injury.
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="yes">
+                The region of the atmosphere and outer space seen from the earth, of a colour intermediate between green and violet, as of the sky or sea on a sunny day.
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer("#one")">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="two" tabindex="-1" role="dialog" aria-labelledby="What is a green field?" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">What is a green field?</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="yes">
+                An area of open land, especially one planted with crops or pasture, typically bounded by hedges or fences, of the colour between blue and yellow in the spectrum.
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="no">
+                A bar or series of bars fixed on upright supports or attached to a wall or ceiling, serving as part of a barrier or used to hang things on, which is of or at a low or relatively low temperature and made of a hard, strong grey or bluish-grey alloy of iron with carbon and usually other elements.
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer("#two")">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="three" tabindex="-1" role="dialog" aria-labelledby="What is a smile?" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">What is a smile?</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="no">
+                A piece of fine material worn to protect or conceal the face.
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="yes">
+                A pleased, kind, or amused facial expression, typically with the corners of the mouth turned up and the front teeth exposed.
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer("#three")">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+	  
+    <div id="player"></div>
+    
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'hjpF8ukSrvk',
+          playerVars: {
+            'autoplay': 1,
+            'controls': 0
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+      // 5. The API calls this function when the player's state changes.
+      var stops = 0;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+          if (stops == 0) setTimeout(stopVideo("#zero"), 104000);  // 1:44
+          else if (stops == 1) setTimeout(stopVideo("#one"), 4000);  // 1:48
+          else if (stops == 2) setTimeout(stopVideo("#two"), 9000);  // 1:57
+          else if (stops == 3) setTimeout(stopVideo("#three"), 4000); // 2:01
+          stops++;
+        }
+      }
+      function stopVideo(stopID) {
+        player.pauseVideo();
+	      $(stopID).modal();
+      }
+      function checkAnswer(stopID) {
+        var answer = $(stopID + " input:radio:checked").val();
+        if (answer == "yes") {
+	        alert("That's correct!");
+	        $(stopID).modal("hide");
+	        player.playVideo();
+	      } else {
+          alert("Try again!");
+        }
+      }
+    </script>
+	  
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
