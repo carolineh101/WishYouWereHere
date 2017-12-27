@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="checkAnswer(\"#zero\")">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="checkAnswer(\'' + #zero + '\')">Submit</button>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="checkAnswer(\"#one\")">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="checkAnswer(\'' + #one + '\')">Submit</button>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="checkAnswer(\"#two\")">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="checkAnswer(\'' + #two + '\')">Submit</button>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="checkAnswer(\"#three\")">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="checkAnswer(\'' + #three + '\')">Submit</button>
           </div>
         </div>
       </div>
@@ -139,10 +139,6 @@
           height: '390',
           width: '640',
           videoId: 'hjpF8ukSrvk',
-          playerVars: {
-            'autoplay': 1,
-            'controls': 0
-          },
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
